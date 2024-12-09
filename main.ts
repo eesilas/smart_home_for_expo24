@@ -26,7 +26,7 @@ basic.forever(function () {
         pins.servoWritePin(AnalogPin.P8, 0)
     }
     if (temp >= 26) {
-        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CW, 128)
+        xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 234)
     } else {
         xiamiBoard.motorStop(MOTOR.M1)
     }
