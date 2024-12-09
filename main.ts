@@ -22,7 +22,7 @@ basic.forever(function () {
     xiamiBoard.OLEDshowUserNumber(dist, 0, 12)
     I2C_LCD1602.ShowNumber(temp, 12, 0)
     I2C_LCD1602.ShowNumber(rain, 8, 2)
-    if (rain >= 180) {
+    if (Math.trunc(rain) >= 180) {
         pins.servoWritePin(AnalogPin.P8, 90)
     } else {
         pins.servoWritePin(AnalogPin.P8, 0)
@@ -31,5 +31,12 @@ basic.forever(function () {
         xiamiBoard.motorRun(MOTOR.M1, DIRECTION.CCW, 234)
     } else {
         xiamiBoard.motorStop(MOTOR.M1)
+    }
+    if (dist < 50) {
+        xiamiBoard.setIndexColor(0, 0xff8000)
+        xiamiBoard.setIndexColor(1, 0xff8000)
+    } else {
+        xiamiBoard.setIndexColor(0, 0x00ffff)
+        xiamiBoard.setIndexColor(1, 0x00ffff)
     }
 })
