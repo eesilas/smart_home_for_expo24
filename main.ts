@@ -1,5 +1,5 @@
-let dist = 0
 basic.showIcon(IconNames.Meh)
+let dist = 0
 let rain = 0
 let temp = 0
 xiamiBoard.initXiaMiBoard()
